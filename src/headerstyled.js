@@ -1,18 +1,10 @@
 import styled from 'styled-components';
 import Colors from './Colors';
 //
-/* import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faAtom } from '@fortawesome/free-solid-svg-icons'; // fas
-import {
-  faFacebook,
-  faInstagram,
-  faTwitter,
-  faYoutubeSquare,
-} from '@fortawesome/free-brands-svg-icons'; // fab */
 
 export const HeaderBackground = styled.div`
   background-image: url('https://github.com/ingridinara/pics/blob/main/stars.jpg?raw=true');
-  /*   opacity: 1; */
+
   background-repeat: repeat;
   position: relative;
   top: 0;
@@ -39,15 +31,6 @@ export const HeaderSocial = styled.div`
   position: relative;
   z-index: 1;
 `;
-
-/*export const icons = styled.div`
-  background-color: black;
-  height: 1rem;
-`;
-
- export const faFacebooks = styled(faFacebook)`
-  background-color: red;
-`; */
 
 export const HeaderIconBar = styled.div`
   color: rgb(102, 102, 102);
