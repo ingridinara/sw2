@@ -4,7 +4,9 @@
 
 1- React JS
 1.1-npx create-react-app
-2- ***deleted***
+
+2- ***was remmoved***
+
 3- Install prop-types
 3.1- npm install --save prop-types
 4- Install axios
