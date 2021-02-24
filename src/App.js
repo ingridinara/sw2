@@ -8,6 +8,7 @@ import SpacecraftDetail from './SpaceCraftDetail';
 import CharacterList from './CharacterList';
 import Footer from './Footer';
 import Fetch from './Fetch';
+import FetchCharacters from './FetchCharacters';
 
 // routes
 import {
@@ -43,10 +44,9 @@ function App() {
             <Fetch />
             <Footer />
           </Route>
-
           <Route path="/characterlist" exact>
             <Header />
-            <CharacterList />
+            <FetchCharacters />
             <Footer />
           </Route>
         </Switch>
