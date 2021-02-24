@@ -7,6 +7,8 @@ import SpacecraftList from './SpacecraftList';
 import SpacecraftDetail from './SpaceCraftDetail';
 import CharacterList from './CharacterList';
 import Footer from './Footer';
+import Fetch from './Fetch';
+
 // routes
 import {
   BrowserRouter as Router,
@@ -28,6 +30,7 @@ function App() {
           <Route path="/" exact>
             <Header />
             <SignIn />
+
             <Footer />
           </Route>
           <Route path="/signup" exact>
@@ -35,16 +38,12 @@ function App() {
             <SignUp />
             <Footer />
           </Route>
-          <ProtectedRoute path="/spacecraftlist" exact>
+          <Route path="/spacecraftlist" exact>
             <Header />
-            <SpacecraftList />
+            <Fetch />
             <Footer />
-          </ProtectedRoute>
-          <ProtectedRoute path="/spacecraftdetail" exact>
-            <Header />
-            <SpacecraftDetail />
-            <Footer />
-          </ProtectedRoute>
+          </Route>
+
           <Route path="/characterlist" exact>
             <Header />
             <CharacterList />
