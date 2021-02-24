@@ -1,5 +1,15 @@
 import React, { Component } from 'react';
 
+import {
+  DisplayButton,
+  HideButton,
+  DetailsUl,
+  DetailsLi,
+  DetailsParagraphTitle,
+  DetailsParagraph,
+  DetailBackground,
+} from './spacecraftdetailstyled';
+
 export default class SpaceCraftDetail extends Component {
   constructor(props) {
     super(props);
@@ -20,31 +30,31 @@ export default class SpaceCraftDetail extends Component {
   render() {
     const info = this.props.details;
     if (!this.state.expanded) {
-      return <button onClick={this.open}>Display Details</button>;
+      return <DisplayButton onClick={this.open}>Display Details</DisplayButton>;
     }
 
     return (
-      <div>
-        <button onClick={this.close}>Hide Details</button>
-        <ul>
-          <li>
-            <h3>Model:</h3>
-            <p>{info.model}</p>
-          </li>
-          <li>
-            <h3>Cargo Capacity:</h3>
-            <p>{info.cargo_capacity}</p>
-          </li>
-          <li>
-            <h3>Consumables:</h3>
-            <p>{info.consumables}</p>
-          </li>
-          <li>
-            <h3>Manufacturer:</h3>
-            <p>{info.manufacturer}</p>
-          </li>
-        </ul>
-      </div>
+      <DetailBackground>
+        <HideButton onClick={this.close}>Hide Details</HideButton>
+        <DetailsUl>
+          <DetailsLi>
+            <DetailsParagraphTitle>Model:</DetailsParagraphTitle>
+            <DetailsParagraph>{info.model}</DetailsParagraph>
+          </DetailsLi>
+          <DetailsLi>
+            <DetailsParagraphTitle>Cargo Capacity:</DetailsParagraphTitle>
+            <DetailsParagraph>{info.cargo_capacity}</DetailsParagraph>
+          </DetailsLi>
+          <DetailsLi>
+            <DetailsParagraphTitle>Consumables:</DetailsParagraphTitle>
+            <DetailsParagraph>{info.consumables}</DetailsParagraph>
+          </DetailsLi>
+          <DetailsLi>
+            <DetailsParagraphTitle>Manufacturer:</DetailsParagraphTitle>
+            <DetailsParagraph>{info.manufacturer}</DetailsParagraph>
+          </DetailsLi>
+        </DetailsUl>
+      </DetailBackground>
     );
   }
 }
