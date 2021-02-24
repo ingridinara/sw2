@@ -1,8 +1,20 @@
-import React from 'react';
-import { CharacterListStyled } from './characterliststyled';
+import React, { Component } from 'react';
 
-const CharacterList = () => {
-  return <CharacterListStyled>CHARACTERLIST</CharacterListStyled>;
-};
-
-export default CharacterList;
+export default class CharacterList extends Component {
+  render() {
+    const characters = this.props.characters;
+    return (
+      <div>
+        {characters.map((c) => {
+          console.log(c);
+          return (
+            <div key={c.url}>
+              <p>Characters List</p>
+              <p>{c.name}</p>
+            </div>
+          );
+        })}
+      </div>
+    );
+  }
+}
