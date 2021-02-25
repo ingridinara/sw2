@@ -37,7 +37,7 @@ const App = () => {
             <SignUp />
             <Footer />
           </Route>
-          <ProtectedRoute path="/spacecraftlist" component={Fetch}>
+          <ProtectedRoute path="/home">
             <Header />
             <Fetch />
             <Footer />

@@ -9,9 +9,7 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
       localStorage.getItem('starwarsmolamucho') ? (
         <Component {...props} />
       ) : (
-        <Redirect
-          to={{ pathname: '/spacecraftlist', state: { from: props.location } }}
-        />
+        <Redirect to={{ pathname: '/home', state: { from: props.location } }} />
       )
     }
   />
