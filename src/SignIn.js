@@ -166,7 +166,7 @@ const SignIn = () => {
             >
               {loadingState ? <div>Loading</div> : <div>Sign In</div>}
               {authenticateUser ? (
-                <Redirect to={{ pathname: '/spacecraftlist' }} />
+                <Redirect to={{ pathname: '/home' }} />
               ) : null}
             </StyledButton>
 

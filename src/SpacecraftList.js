@@ -7,12 +7,17 @@ import {
   SpacecraftTitle,
   SpacecraftCard,
 } from './spacecraftliststyled';
+import { BrowserRouter as Router, Redirect, Link } from 'react-router-dom';
 const SpacecraftList = ({ ships }) => {
+  const handleClick = (e) => {
+    <Redirect to={{ pathname: '/home' }} />;
+  };
   return (
     <div>
       <ListStyle>
         <SpacecraftCard>
           <PageTitle>Spacecrafts List</PageTitle>
+
           {ships.map((s) => {
             //console.log(s);
             return (
