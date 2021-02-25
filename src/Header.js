@@ -82,7 +82,9 @@ const Header = () => {
             }}
           />
         </HeaderSocial>
-        <HeaderLogo src={whiteLogo} alt="starWarsLogo"></HeaderLogo>
+        <Link to="/">
+          <HeaderLogo src={whiteLogo} alt="starWarsLogo"></HeaderLogo>
+        </Link>
         <HeaderUpperRight>
           <HeaderSearch>
             <HeaderInput placeholder="Search Star Wars"></HeaderInput>
@@ -101,9 +103,14 @@ const Header = () => {
             />
           </HeaderSearch>
           <HeaderButtonsDiv>
-            <HeaderSignInButton>SIGN IN</HeaderSignInButton>
+            <Link to="/">
+              <HeaderSignInButton>SIGN IN</HeaderSignInButton>
+            </Link>
+
             <HeaderBetweenButtons>//</HeaderBetweenButtons>
-            <HeaderSignUpButton>SIGN UP</HeaderSignUpButton>
+            <Link to="/signup">
+              <HeaderSignUpButton>SIGN UP</HeaderSignUpButton>
+            </Link>
           </HeaderButtonsDiv>
         </HeaderUpperRight>
       </HeaderUpperPart>

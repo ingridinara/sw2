@@ -1,32 +1,25 @@
 import axios from 'axios';
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import CharacterList from './CharacterList';
 
-export default class FetchCharacters extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      characters: [],
+const FetchCharacters = () => {
+  const [characters, setCharacters] = useState([]);
+
+  useEffect(() => {
+    const getCharacters = async () => {
+      try {
+        const {
+          data: { results },
+        } = await axios.get('https://swapi.dev/api/starships');
+        setCharacters(results);
+      } catch (error) {
+        console.log(error);
+      }
     };
-    this.getCharacters = this.getCharacters.bind(this);
-  }
+    getCharacters();
+  }, []);
 
-  getCharacters() {
-    return axios.get('http://swapi.dev/api/people').then((response) => {
-      console.log(response.data.results);
-      this.setState({ characters: response.data.results });
-    });
-  }
+  return <CharacterList characters={characters} />;
+};
 
-  componentDidMount() {
-    this.getCharacters();
-  }
-  render() {
-    const { characters } = this.state;
-    return (
-      <div>
-        <CharacterList characters={characters} />
-      </div>
-    );
-  }
-}
+export default FetchCharacters;

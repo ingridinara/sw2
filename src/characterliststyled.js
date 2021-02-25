@@ -24,12 +24,13 @@ export const CharactersNames = styled.div`
   background-color: rgb(42, 42, 42);
   margin-top: 2rem;
   margin-bottom: 0.1rem;
-  margin-right: 1rem;
-  margin-left: 7rem;
+  margin-right: 3rem;
+  margin-left: 3rem;
+  padding-right: 1rem;
   padding-left: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid rgb(49, 106, 179);
   text-align: center;
-  width: 50%;
+  width: 70%;
 `;

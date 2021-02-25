@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 // components
 import Header from './Header';
 import SignIn from './SignIn';
@@ -20,30 +20,28 @@ import {
 } from 'react-router-dom';
 import ProtectedRoute from './ProtectedRoute';
 
-//
-import { AppStyled } from './appstyled';
-
-function App() {
+const App = () => {
   return (
-    <AppStyled>
+    <>
       <Router>
         <Switch>
           <Route path="/" exact>
-            <Header />
-            <SignIn />
-
-            <Footer />
+            <div>
+              <Header />
+              <SignIn />
+              <Footer />
+            </div>
           </Route>
           <Route path="/signup" exact>
             <Header />
             <SignUp />
             <Footer />
           </Route>
-          <Route path="/spacecraftlist" exact>
+          <ProtectedRoute path="/spacecraftlist" component={Fetch}>
             <Header />
             <Fetch />
             <Footer />
-          </Route>
+          </ProtectedRoute>
           <Route path="/characterlist" exact>
             <Header />
             <FetchCharacters />
@@ -51,8 +49,8 @@ function App() {
           </Route>
         </Switch>
       </Router>
-    </AppStyled>
+    </>
   );
-}
+};
 
 export default App;

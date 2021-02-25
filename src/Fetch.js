@@ -1,27 +1,25 @@
-import React, { Component } from 'react';
 import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 import SpacecraftList from './SpacecraftList';
-export default class Fetch extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      ships: [],
+
+const Fetch = () => {
+  const [ships, setShips] = useState([]);
+
+  useEffect(() => {
+    const getShips = async () => {
+      try {
+        const {
+          data: { results },
+        } = await axios.get('https://swapi.dev/api/starships');
+        setShips(results);
+      } catch (error) {
+        console.log(error);
+      }
     };
-    this.getShips = this.getShips.bind(this);
-  }
+    getShips();
+  }, []);
 
-  getShips() {
-    return axios.get('https://swapi.dev/api/starships').then((response) => {
-      // console.log(response.data.results);
-      this.setState({ ships: response.data.results });
-    });
-  }
+  return <SpacecraftList ships={ships} />;
+};
 
-  componentDidMount() {
-    this.getShips();
-  }
-  render() {
-    const { ships } = this.state;
-    return <SpacecraftList ships={ships} />;
-  }
-}
+export default Fetch;
